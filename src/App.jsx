@@ -1,5 +1,4 @@
 import "./App.scss";
-
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import { Route, Routes } from "react-router-dom";

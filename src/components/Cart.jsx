@@ -3,7 +3,7 @@ import { useCart } from "../context/cartContext";
 import { useMenu } from "../context/menuContext";
 
 function Cart() {
-  const { menu } = useMenu();
+  const menu = useMenu();
   const { cart } = useCart();
 
   if (!menu)
@@ -35,7 +35,7 @@ function Cart() {
 }
 
 function CartItem({ item, options, quantity }) {
-  const { deleteCart } = useCart();
+  const { removeFromCart } = useCart();
   return (
     <li className="cart-item">
       <div className="cart-item-info">
@@ -53,7 +53,7 @@ function CartItem({ item, options, quantity }) {
       <button
         className="cart-item-delete"
         onClick={() => {
-          deleteCart(item.id);
+          removeFromCart(item.id);
         }}
       >
         삭제
