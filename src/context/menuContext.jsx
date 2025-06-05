@@ -4,9 +4,11 @@ import data from "../assets/data";
 const menuContext = createContext();
 
 export function MenuProvider({ children }) {
-  const menu = data.menu;
-
-  return <menuContext value={menu}>{children}</menuContext>;
+  return (
+    <menuContext.Provider value={{ menu: data.menu }}>
+      {children}
+    </menuContext.Provider>
+  );
 }
 
 export const useMenu = () => useContext(menuContext);
